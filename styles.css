@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap");
+
+html,
+body {
+  overflow-y: auto; /* Tambahkan scroll jika diperlukan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0, #ffdde1);
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  transition: background 0.5s ease-in-out;
+  padding: 20px;
+}
+
+/* Tampilan utama */
+.tampilan {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  /* overflow: hidden; */
+}
+
+.container {
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+/* Kartu */
+.card {
+  display: flex;
+  /* flex-direction: column;
+  align-items: center;
+  padding: 20px; */
+}
+
+.left-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Panel */
+.left-panel img {
+  width: 45%;
+  max-width: 160px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.left-panel img:hover {
+  transform: scale(1.05);
+}
+
+.right-panel {
+  width: 100%;
+  background: url("background-card.jpg") no-repeat center center/cover;
+  text-align: center;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.3);
+  color: #ff4d6d;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.6em;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s;
+}
+
+.hidden.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease-in-out;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff4d6d;
+  margin-top: 35px;
+}
+
+/* Tombol */
+.button {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(255, 120, 150, 0.4);
+  margin-top: 15px;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(255, 77, 109, 0.6);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.swal-popup-custom {
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(255, 77, 109, 0.5);
+  transform: scale(1.05);
+}
+
+.swal-button-custom {
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-weight: bold;
+  box-shadow: 0px 5px 15px rgba(255, 77, 109, 0.3);
+}
+
+.swal-button-custom:hover {
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  color: white;
+}
+
+/* Efek teks gombalan muncul */
+.gombalan-text {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ff4d6d;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  animation: bounceIn 1s ease-in-out;
+}
+
+.gombalan-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efek glowing untuk tombol */
+.glowing-button {
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(255, 77, 109, 0.4);
+}
+
+.glowing-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(255, 77, 109, 0.6);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .tampilan {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .left-panel img {
+    width: 90%;
+    max-width: 150px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .glowing-button {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 1em;
+  }
+}
