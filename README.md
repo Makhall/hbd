@@ -45,10 +45,3 @@ Website ini telah di-hosting di Netlify. Kamu bisa melihatnya di sini:
 ## 🤝 Kontribusi
 
 Jika ingin berkontribusi atau menambahkan fitur baru, silakan fork repo ini dan buat pull request! Semua saran dan ide sangat dihargai. 🎈
-
----
-
-## 📜 Lisensi
-
-Proyek ini menggunakan lisensi **MIT**. Silakan gunakan dan modifikasi sesuai kebutuhan. 😊
-
