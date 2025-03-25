@@ -12,20 +12,6 @@ HBD adalah website interaktif yang dibuat untuk memberikan ucapan selamat ulang 
 
 ---
 
-## 🚀 Cara Menjalankan
-
-1. **Clone repository ini:**  
-   ```sh
-   git clone https://github.com/Makhall/hbd.git
-   ```
-2. **Masuk ke folder proyek:**  
-   ```sh
-   cd hbd
-   ```
-3. **Buka file `index.html` di browser** atau jalankan dengan Live Server jika menggunakan VS Code.
-
----
-
 ## 🌐 Hosting di Netlify
 
 Website ini telah di-hosting di Netlify. Kamu bisa melihatnya di sini:  
