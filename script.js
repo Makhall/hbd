@@ -28,6 +28,8 @@ function startExperience() {
       title: message,
       background: "#fff0f3",
       color: "#ff4d6d",
+      confirmButtonColor: "#ff758c",
+      confirmButtonText: "➜➜➜",
     }).then(() => {
       // Baru setelah SweetAlert kedua ditutup, pindah ke finalMessage
       document.getElementById("startScreen").classList.add("hidden");
