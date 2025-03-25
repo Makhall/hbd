@@ -82,6 +82,7 @@ function loadSong(index) {
 }
 
 progress.addEventListener("input", () => {
+  if (!audio.duration) return;
   audio.currentTime = (progress.value / 100) * audio.duration;
 });
 
@@ -132,10 +133,6 @@ audio.addEventListener("loadeddata", () => {
   if (audio.duration) {
     totalDurationEl.textContent = formatTime(audio.duration);
   }
-});
-
-progress.addEventListener("input", () => {
-  audio.currentTime = (progress.value / 100) * audio.duration;
 });
 
 audio.addEventListener("ended", () => {
