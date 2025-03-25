@@ -1,5 +1,6 @@
 let gombalanCount = 0;
 let questionIndex = 0;
+let currentIndex = 0;
 
 function startExperience() {
   Swal.fire({
@@ -45,6 +46,61 @@ function startmain() {
     document.getElementById("mainContent").classList.add("visible");
   }, 1000);
 }
+
+const images = document.querySelectorAll(".left-panel img");
+
+function openPreview(index) {
+  currentIndex = index;
+  const previewOverlay = document.querySelector(".preview-overlay");
+  const previewImg = document.getElementById("preview-img");
+  previewImg.src = images[currentIndex].src;
+  previewOverlay.classList.add("active");
+}
+
+function closePreview() {
+  const previewOverlay = document.querySelector(".preview-overlay");
+  const previewImg = document.getElementById("preview-img");
+  previewImg.style.transform = "scale(0.5)";
+  setTimeout(() => {
+    previewOverlay.classList.remove("active");
+  }, 300);
+}
+
+function prevImage(event) {
+  event.stopPropagation();
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  document.getElementById("preview-img").src = images[currentIndex].src;
+}
+
+function nextImage(event) {
+  event.stopPropagation();
+  currentIndex = (currentIndex + 1) % images.length;
+  document.getElementById("preview-img").src = images[currentIndex].src;
+}
+
+document.addEventListener("keydown", function (event) {
+  if (document.querySelector(".preview-overlay").classList.contains("active")) {
+    if (event.key === "ArrowLeft") {
+      prevImage(event);
+    } else if (event.key === "ArrowRight") {
+      nextImage(event);
+    } else if (event.key === "Escape") {
+      closePreview();
+    }
+  }
+});
+
+document
+  .getElementById("preview-img")
+  .addEventListener("wheel", function (event) {
+    event.preventDefault();
+    let currentScale = this.style.transform.match(/scale\(([^)]+)\)/);
+    let scale = currentScale ? parseFloat(currentScale[1]) : 1;
+
+    scale += event.deltaY * -0.001;
+    scale = Math.min(Math.max(0.5, scale), 3);
+    this.style.transform = `scale(${scale})`;
+  });
 
 function tampilkanGombalan() {
   const gombalanList = [
@@ -97,25 +153,32 @@ function kePertanyaan() {
 
 const questions = [
   {
-    q: "Kalau aku tiba-tiba berubah jadi hewan, kira-kira aku bakal jadi hewan apa? 🍦🥰",
-    o1: "Anjing 🐶",
-    o2: "Kucing 🐱",
-    msg1: "Wahh, jadi anjing? Berarti aku bakal setia banget nih sama kamu! 🐶💖",
-    msg2: "Jadi kucing? Berarti aku bakal manja-manja terus ke kamu! 😻💕",
+    q: "Kalau aku jadi zombie, kamu bakal lari atau biarin aku gigit? 🧟‍♀️💀",
+    o1: "Lari 🏃🏻‍♀️",
+    o2: "Biarin digigit 🧟‍♀️",
+    msg1: "iih kok kamu ga setiaa sihh?? 😠💔",
+    msg2: "aaaa so sweet...kita jadi zombie couple!🧟‍♂️🧟‍♀️",
   },
   {
-    q: "Kalau kamu bisa kasih aku kekuatan super, kamu bakal kasih apa? 🥺💖",
-    o1: "Bisa membaca isi hati ❤️",
-    o2: "Bisa memperlambat waktu ⌛",
-    msg1: "Wahh, kalau bisa baca isi hati, aku bakal tau kapan kamu kangen! 🥰",
-    msg2: "Kalau bisa memperlambat waktu, aku pengen waktu kita bareng jadi lebih lama! ⏳💞",
+    q: "Kalau aku jadi nyamuk, kamu bakal usir aku atau kamu biarin? 🦟",
+    o1: "Biarin 😷",
+    o2: "Usir 😤",
+    msg1: "aaa.. kamu nanti aku bisikin 'aku boleh hisap kamu ga?' 🥵",
+    msg2: "yauda.. nanti aku cari cewe lainn ajaa biar bisa kuhisap 😏",
   },
   {
-    q: "Kalau kamu ngambek, cara paling ampuh buat balikin mood kamu apa?",
-    o1: "Kasih makanan 🍛",
-    o2: "Kasih perhatian 💕",
-    msg1: "Makanan? Wah, kalau gitu aku bakal masakin makanan favoritmu tiap hari! 🍜💖",
-    msg2: "Kasih perhatian? Tenang sayang, aku bakal manjain kamu tiap saat! 😘",
+    q: "Kalau kita harus bertukar tubuh sehari, apa yang bakal kamu lakuin pertama? 🔄😆",
+    o1: "Pikiran negatif 🔞",
+    o2: "Pikiran positif 💕",
+    msg1: "astaghfirullah dosaa.. inget belum muhrim 🤪",
+    msg2: "emangnnya kamu bisa berpikir positif kalo tukeran tubuh?? 🤨",
+  },
+  {
+    q: "Kalau kamu punya mesin waktu, kamu lebih pilih ke masa lalu buat ketemu aku lebih cepat atau ke masa depan buat liat kita nanti?? ⏳💑",
+    o1: "Masa lalu ⌛",
+    o2: "Masa depan 🔮",
+    msg1: "aku jugaa... biar lebih lama bareng kamu dari awal 😍",
+    msg2: "umur ga ada yang tau 💀",
   },
 ];
 
