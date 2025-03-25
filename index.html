@@ -59,11 +59,21 @@
       <div class="container hidden" id="mainContent">
         <div class="card">
           <div class="left-panel">
-            <img src="photo/1.jpg" alt="Foto 1" />
-            <img src="photo/3.jpg" alt="Foto 3" />
-            <img src="photo/2.jpg" alt="Foto 2" />
-            <img src="photo/4.jpg" alt="Foto 4" />
+            <img src="photo/1.jpg" alt="Foto 1" onclick="openPreview(0)" />
+            <img src="photo/3.jpg" alt="Foto 3" onclick="openPreview(1)" />
+            <img src="photo/2.jpg" alt="Foto 2" onclick="openPreview(2)" />
+            <img src="photo/4.jpg" alt="Foto 4" onclick="openPreview(3)" />
           </div>
+          <div class="preview-overlay" onclick="closePreview()">
+            <button class="nav-button prev-btn" onclick="prevImage(event)">
+              &#10094;
+            </button>
+            <img id="preview-img" src="" alt="Preview" />
+            <button class="nav-button next-btn" onclick="nextImage(event)">
+              &#10095;
+            </button>
+          </div>
+
           <div class="right-panel">
             <h1 style="margin-top: 100px">🎉Selamat Ulang Tahun🎉</h1>
             <div class="name">🎂Sayang🎂</div>
@@ -101,18 +111,25 @@
       </div>
 
       <div class="question-screen hidden" id="questionScreen">
-        <h1>💘 Pertanyaan Romantis 💘</h1>
-        <p id="question"></p>
+        <h1 style="font-size: 30px">
+          💘 Yuk seru-seruan aku ada beberapa pertanyaan💘
+        </h1>
+        <p id="question" class="pertanyaan"></p>
         <button class="button" id="option1" onclick="pilihJawaban(1)"></button>
         <button class="button" id="option2" onclick="pilihJawaban(2)"></button>
         <button class="button hidden" id="nextQuestionBtn"></button>
       </div>
 
       <div class="screen hidden" id="thankYouScreen">
-        <h1>💖 Terima kasih sudah menjadi pacar yang baik 💖</h1>
+        <h1>💖 Terima kasih 💖</h1>
         <p>
-          Aku bersyukur banget bisa punya kamu dalam hidupku. Love you sayang!
-          😘💕
+          Sayang, makasih ya udah jadi pacar yang baik banget buat aku 😘💖. Aku
+          tahu aku kadang nyebelin, tapi kamu selalu sabar dan tetap sayang sama
+          aku 🥺💕. Kamu bikin hari-hariku lebih berwarna, lebih seru, dan
+          pastinya lebih bahagia 🤭✨. Makasih udah selalu ada, selalu dengerin
+          cerita random aku, dan nggak pernah bosen nemenin aku 🥰. Aku
+          bersyukur banget punya kamu, semoga kita selalu bareng dan makin
+          sayang tiap hari yaa 😚💞.
         </p>
       </div>
     </div>
