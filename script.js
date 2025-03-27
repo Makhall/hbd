@@ -17,10 +17,13 @@ function startExperience() {
 
     if (result.isConfirmed) {
       message = "Awww, sini aku peluk! 🤗";
+      imageUrl = "https://media.giphy.com/media/VHyMvWhvKvJNo2pVQ6/giphy.gif";
     } else if (result.isDenied) {
       message = "Hihi, aku juga mau cium! mmwuaachhh😘";
+      imageUrl = "https://media.giphy.com/media/W1hd3uXRIbddu/giphy.gif";
     } else {
       message = "Yaudah sini, dua-duanya ya! mmwuachhh🤗😘";
+      imageUrl = "https://media.giphy.com/media/c7G6drkobIQXRJwX5v/giphy.gif";
     }
 
     // Tampilkan pesan kedua setelah user memilih
@@ -30,6 +33,9 @@ function startExperience() {
       color: "#ff4d6d",
       confirmButtonColor: "#ff758c",
       confirmButtonText: "➜➜➜",
+      imageUrl: imageUrl, // Tambahkan gambar jika ada
+      imageWidth: 200,
+      imageHeight: 200,
     }).then(() => {
       // Baru setelah SweetAlert kedua ditutup, pindah ke finalMessage
       document.getElementById("startScreen").classList.add("hidden");
@@ -160,13 +166,17 @@ const questions = [
     o2: "Biarin digigit 🧟‍♀️",
     msg1: "iih kok kamu ga setiaa sihh?? 😠💔",
     msg2: "aaaa so sweet...kita jadi zombie couple!🧟‍♂️🧟‍♀️",
+    gif1: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeng4eHdtdGF5aHh0NWwzbnk1emp4cHI4MWlnMjlyZGhmYThvMTQ5NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yIMbgB6AmsahkY3jHH/giphy.gif",
+    gif2: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXY2MWp1Yjdocm13ZGc5eDl1c2lwczdieDBmOWx2dWM3c3hsZmFhaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/N5RJXC61foVShDC4Fw/giphy.gif",
   },
   {
     q: "Kalau aku jadi nyamuk, kamu bakal usir aku atau kamu biarin? 🦟",
     o1: "Biarin 😷",
     o2: "Usir 😤",
     msg1: "aaa.. kamu nanti aku bisikin 'aku boleh hisap kamu ga?' 🥵",
-    msg2: "yauda.. nanti aku cari cewe lainn ajaa biar bisa kuhisap 😏",
+    msg2: "yauda.. nanti aku cari cewe lainn ajaa yang mau kuhisap 😏",
+    gif1: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTl4eWlja2dvYm5udTRpcGZyM2Q4NWliYjhmaXo0MDJ5MTRpMmJ6OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d31wUHheeLuj3bfq/giphy.gif",
+    gif2: "https://media.giphy.com/media/osLWTRRtDXe29iYmcL/giphy.gif?cid=ecf05e47bf58hzsq6widv7jxmgteccnk8328y4o7wkru2oqo&ep=v1_gifs_related&rid=giphy.gif&ct=g",
   },
   {
     q: "Kalau kita harus bertukar tubuh sehari, apa yang bakal kamu lakuin pertama? 🔄😆",
@@ -174,6 +184,8 @@ const questions = [
     o2: "Pikiran positif 💕",
     msg1: "astaghfirullah dosaa.. inget belum muhrim 🤪",
     msg2: "emangnnya kamu bisa berpikir positif kalo tukeran tubuh?? 🤨",
+    gif1: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjN4ZWtoMHk4dWl3NHpmZmVxa2VrYnlpeDdvcnVncjU5MWxoaWMzaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jivGITd768psP80B2i/giphy.gif",
+    gif2: "https://media.giphy.com/media/eM8mZeC8NhEqBExN9C/giphy.gif?cid=ecf05e47qar4wb6cwzglqbet5xw2ewrxy5s2tad4ne762o6g&ep=v1_gifs_related&rid=giphy.gif&ct=g",
   },
   {
     q: "Kalau kamu punya mesin waktu, kamu lebih pilih ke masa lalu buat ketemu aku lebih cepat atau ke masa depan buat liat kita nanti?? ⏳💑",
@@ -181,6 +193,8 @@ const questions = [
     o2: "Masa depan 🔮",
     msg1: "aku jugaa... biar lebih lama bareng kamu dari awal 😍",
     msg2: "umur ga ada yang tau 💀",
+    gif1: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGsxd3hkcXM2ZnJ3cjJmdTV0NWo0anFjeHZjMHB0NXh0aWYzaWF2aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bDDGrlodMHjmfJpVEx/giphy.gif",
+    gif2: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2p3M25sb3dzdTlrZ2c0azUwN2Z3c3gyc3IzOXA2NWFjeWEzYmM2MyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1iv69y6QxMS2SUmPvC/giphy.gif",
   },
 ];
 
@@ -199,6 +213,7 @@ function tampilkanPertanyaan() {
 function pilihJawaban(option) {
   const selectedQuestion = questions[questionIndex];
   const message = option === 1 ? selectedQuestion.msg1 : selectedQuestion.msg2;
+  const gifUrl = option === 1 ? selectedQuestion.gif1 : selectedQuestion.gif2;
 
   Swal.fire({
     title: message,
@@ -206,6 +221,9 @@ function pilihJawaban(option) {
     background: "#fff0f3",
     color: "#ff4d6d",
     confirmButtonColor: "#ff4d6d",
+    imageUrl: gifUrl,
+    imageWidth: 200,
+    imageHeight: 200,
     customClass: {
       popup: "swal-popup-custom",
       confirmButton: "swal-button-custom",
