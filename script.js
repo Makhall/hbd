@@ -175,7 +175,7 @@ const questions = [
     o2: "Usir 😤",
     msg1: "aaa.. nanti aku bakal bisikin ke kamu 'aku boleh hisap kamu ga?' 🥵",
     msg2: "yauda.. nanti aku cari cewe lainn ajaa yang mau kuhisap 😏",
-    gif1: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTl4eWlja2dvYm5udTRpcGZyM2Q4NWliYjhmaXo0MDJ5MTRpMmJ6OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d31wUHheeLuj3bfq/giphy.gif",
+    gif1: "https://media.giphy.com/media/1YutDH5oW387ziOaHw/giphy.gif?cid=ecf05e47dt42tjjiywtl6h27l0ofmw97ct101t213ikbxeb1&ep=v1_gifs_search&rid=giphy.gif&ct=g",
     gif2: "https://media.giphy.com/media/osLWTRRtDXe29iYmcL/giphy.gif?cid=ecf05e47bf58hzsq6widv7jxmgteccnk8328y4o7wkru2oqo&ep=v1_gifs_related&rid=giphy.gif&ct=g",
   },
   {
