@@ -46,25 +46,15 @@ document.querySelector(".controls").appendChild(loopBtn);
 
 const songs = [
   {
-    title: "Somebody's Pleasure",
-    artist: "Aziz Hedra",
-    file: "music/somebodypleasure.mp3",
+    title: "Bergema Sampai Selamanya",
+    artist: "NadifNadhif Basalamah",
+    file: "music/bergemasampaiselamanya.mp3",
   },
   {
-    title: "I Like Me Better",
-    artist: "Lauv",
-    file: "music/ilikemebetter.mp3",
+    title: "Lesung Pipi",
+    artist: "Raim Laode",
+    file: "music/lesungpipi.mp3",
   },
-  { title: "Blue", artist: "Yung kai", file: "music/blue.mp3" },
-  { title: "Those Eyes", artist: "New West", file: "music/thoseeyes.mp3" },
-  {
-    title: "Next Door",
-    artist: "Amelia Moore ft.ASTN",
-    file: "music/nextdoor.mp3",
-  },
-  { title: "Soft Spot", artist: "Keshi", file: "music/softspot.mp3" },
-  { title: "Double Take", artist: "Dhruv", file: "music/doubletake.mp3" },
-  { title: "La La Lost You", artist: "Niki", file: "music/lalalostyou.mp3" },
 ];
 
 let currentSongIndex = 0;
