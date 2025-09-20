@@ -54,7 +54,7 @@ body {
 
 /* Panel */
 .left-panel img {
-  width: 45%;
+  width: 100%;
   max-width: 160px;
   border-radius: 15px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
