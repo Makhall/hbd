@@ -15,7 +15,7 @@ HBD adalah website interaktif yang dibuat untuk memberikan ucapan selamat ulang 
 ## 🌐 Hosting di Netlify
 
 Website ini telah di-hosting di Netlify. Kamu bisa melihatnya di sini:  
-🔗 **[HBD Website](https://birthday-surprise-107e8f.netlify.app/)**
+🔗 **[HBD Website](https://birthday-surprise-1720.netlify.app/)**
 
 ---
 
